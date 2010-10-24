@@ -1,4 +1,6 @@
 SearchBoxInference::Application.routes.draw do
+  resources :links
+
   get "demo/index"
 
   # The priority is based upon order of creation:
