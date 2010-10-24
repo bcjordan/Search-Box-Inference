@@ -1,5 +1,12 @@
 <h1>Listing links</h1>
 
+<% form_tag links_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
@@ -14,7 +21,7 @@
   <tr>
     <td><%= link.name %></td>
     <td><%= link.description %></td>
-    <td><%= link.url %></td>
+    <td><%= link_to link.url, link.url %></td>
     <td><%= link_to 'Show', link %></td>
     <td><%= link_to 'Edit', edit_link_path(link) %></td>
     <td><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>

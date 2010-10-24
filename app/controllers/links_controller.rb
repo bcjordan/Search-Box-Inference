@@ -2,7 +2,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.xml
   def index
-    @links = Link.all
+    @links = Link.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
